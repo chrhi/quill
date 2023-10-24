@@ -42,7 +42,7 @@ export function constructMetadata({
       title,
       description,
       images: [image],
-      creator: "@chehri",
+      creator: "@KING_IN_JUNGLE",
     },
     icons,
     metadataBase: new URL("https://quill-blcrm7149-chrhi.vercel.app"),
