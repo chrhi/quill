@@ -13,8 +13,8 @@ export function absoluteUrl(path: string) {
 }
 
 export function constructMetadata({
-  title = "Alpha - abdullah chehri",
-  description = "Alpha is an open-source software to make chatting to your PDF files easy.",
+  title = "Quill - abdullah chehri",
+  description = "Quill is an open-source software to make chatting to your PDF files easy.",
   image = "/thumbnail.png",
   icons = "/favicon.ico",
   noIndex = false,

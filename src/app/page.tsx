@@ -1,37 +1,82 @@
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
-import Link from "next/link";
+
 import { ArrowRight } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
+
+import Hero from "@/components/layout/sections/Hero";
+import { services } from "@/config/landing-page";
+import Footer from "@/components/layout/footer";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+
 import Image from "next/image";
+import Link from "next/link";
+import { FC } from "react";
 
 export default function Home() {
   return (
     <>
-      <MaxWidthWrapper className="mb-12 mt-28 sm:mt-40 flex flex-col items-center justify-center text-center">
-        <div className="mx-auto mb-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border border-gray-200 bg-white px-7 py-2 shadow-md backdrop-blur transition-all hover:border-gray-300 hover:bg-white/50">
-          <p className="text-sm font-semibold text-gray-700">
-            Alpha is now public!
-          </p>
-        </div>
-        <h1 className="max-w-4xl text-5xl font-bold md:text-6xl lg:text-7xl">
-          Chat with your <span className="text-blue-600">documents</span> in
-          seconds.
-        </h1>
-        <p className="mt-5 max-w-prose text-zinc-700 sm:text-lg">
-          Quill allows you to have conversations with any PDF document. Simply
-          upload your file and start asking questions right away.
-        </p>
+      <MaxWidthWrapper className=" relative flex flex-col items-center justify-center text-center">
+        <section className=" relative  mt-12">
+          <div className="flex  items-center gap-10 ">
+            <div className="flex  w-full md:w-[50%]  p-4 md:pt-20 md:pr-20 flex-col  gap-y-4 justify-end items-start">
+              <h1 className=" text-6xl md:text-7xl font-bold text-center md:text-start">
+                Chat with your documents in seconds with
+                <span className="text-primary"> Quill</span>
+              </h1>
 
-        <Link
-          className={buttonVariants({
-            size: "lg",
-            className: "mt-5",
-          })}
-          href="/dashboard"
-          target="_blank"
-        >
-          Get started <ArrowRight className="ml-2 h-5 w-5" />
-        </Link>
+              <p className="mt-6 text-xl md:text-2xl text-gray-600 text-center md:text-start ">
+                Powerful, Beatiful software as a service that allows you to chat
+                with your documents
+              </p>
+              <Link
+                href="/signup"
+                className={cn(
+                  buttonVariants({ size: "lg" }),
+                  "rounded-full p-4 max-w-xs text-2xl mx-auto md:mx-0 flex items-center font-semibold h-14 my-5 "
+                )}
+              >
+                {" "}
+                start for free <ArrowRight className="ml-2 h-6 w-6" />
+              </Link>
+
+              {/* <Searchbar /> */}
+            </div>
+
+            <div className="relative  w-[0%] hidden md:block md:w-[50%]  h-full    sm:mx-auto">
+              <Image
+                src="/assets/start.svg"
+                alt="arrow"
+                width={105}
+                height={105}
+                className="max-xl:hidden absolute right-[15%] top-[100px] "
+              />
+              <Image
+                src={"/assets/hero-1.png"}
+                alt={"woman with laptob"}
+                width={1200}
+                height={1188}
+                quality={100}
+                priority
+                className="object-contain"
+              />
+
+              <Image
+                src="/assets/hand-drawn-arrow.svg"
+                alt="arrow"
+                width={175}
+                height={175}
+                className="max-xl:hidden absolute -left-[15%] bottom-[100px] z-0"
+              />
+              <Image
+                src="/assets/start.svg"
+                alt="arrow"
+                width={105}
+                height={105}
+                className="max-xl:hidden absolute left-[10%] bottom-[80px] "
+              />
+            </div>
+          </div>
+        </section>
       </MaxWidthWrapper>
 
       {/* value proposition section */}
@@ -51,7 +96,7 @@ export default function Home() {
           </div>
 
           <div>
-            <div className="mx-auto max-w-6xl px-6 lg:px-8">
+            <div className="mx-auto max-w-screen-xl px-6 lg:px-8">
               <div className="mt-16 flow-root sm:mt-24">
                 <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
                   <Image
@@ -60,7 +105,7 @@ export default function Home() {
                     width={1364}
                     height={866}
                     quality={100}
-                    className="rounded-md bg-white p-2 sm:p-8 md:p-20 shadow-2xl ring-1 ring-gray-900/10"
+                    className="rounded-md bg-white p-2 sm:p-8 md:p-20 shadow-2xl ring-1 mx-auto ring-gray-900/10"
                   />
                 </div>
               </div>
@@ -83,65 +128,64 @@ export default function Home() {
       </div>
 
       {/* Feature section */}
-      <div className="mx-auto mb-32 mt-32 max-w-5xl sm:mt-56">
+      <div className="mx-auto relative  mb-32 mt-32 max-w-5xl sm:mt-56">
         <div className="mb-12 px-6 lg:px-8">
           <div className="mx-auto max-w-2xl sm:text-center">
             <h2 className="mt-2 font-bold text-4xl text-gray-900 sm:text-5xl">
-              Start chatting in minutes
+              All what i have used to build this website
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              Chatting to your PDF files has never been easier than with Quill.
+              abdellah chehri has used so many thing in order to build this
+              website
             </p>
           </div>
+
+          <Image
+            src="/assets/erro_down.svg"
+            alt="arrow"
+            width={105}
+            height={105}
+            className="max-xl:hidden absolute right-[0] top-[-100px] z-0"
+          />
         </div>
 
         {/* steps */}
-        <ol className="my-8 space-y-4 pt-8 md:flex md:space-x-12 md:space-y-0">
-          <li className="md:flex-1">
-            <div className="flex flex-col space-y-2 border-l-4 border-zinc-300 py-2 pl-4 md:border-l-0 md:border-t-2 md:pb-0 md:pl-0 md:pt-4">
-              <span className="text-sm font-medium text-blue-600">Step 1</span>
-              <span className="text-xl font-semibold">
-                Sign up for an account
-              </span>
-              <span className="mt-2 text-zinc-700">
-                Either starting out with a free plan or choose our{" "}
-                <Link
-                  href="/pricing"
-                  className="text-blue-700 underline underline-offset-2"
-                >
-                  pro plan
-                </Link>
-                .
-              </span>
-            </div>
-          </li>
-          <li className="md:flex-1">
-            <div className="flex flex-col space-y-2 border-l-4 border-zinc-300 py-2 pl-4 md:border-l-0 md:border-t-2 md:pb-0 md:pl-0 md:pt-4">
-              <span className="text-sm font-medium text-blue-600">Step 2</span>
-              <span className="text-xl font-semibold">
-                Upload your PDF file
-              </span>
-              <span className="mt-2 text-zinc-700">
-                We&apos;ll process your file and make it ready for you to chat
-                with.
-              </span>
-            </div>
-          </li>
-          <li className="md:flex-1">
-            <div className="flex flex-col space-y-2 border-l-4 border-zinc-300 py-2 pl-4 md:border-l-0 md:border-t-2 md:pb-0 md:pl-0 md:pt-4">
-              <span className="text-sm font-medium text-blue-600">Step 3</span>
-              <span className="text-xl font-semibold">
-                Start asking questions
-              </span>
-              <span className="mt-2 text-zinc-700">
-                It&apos;s that simple. Try out Quill today - it really takes
-                less than a minute.
-              </span>
-            </div>
-          </li>
+        <ol className="my-8 mb-12 px-6 lg:px-8 w-full h-fit min-h-[200px] grid grid-col-1 gap-4  md:grid-cols-3 ">
+          {services.map((item, index) => (
+            <li
+              key={item.title}
+              className="md:flex-1 bg-blue-500 h-[200px]  rounded-lg shadow p-4 "
+            >
+              <div className="flex flex-col space-y-2  border-zinc-300 py-2 pl-4  md:pb-0 md:pl-0 md:pt-4">
+                <span className="text-xl text-white font-semibold">
+                  {item.title}
+                </span>
+                <span className="mt-2 text-gray-100">{item.description}</span>
+              </div>
+            </li>
+          ))}
         </ol>
 
-        <div className="mx-auto max-w-6xl px-6 lg:px-8">
+        <div className="mb-12 px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl sm:text-center">
+            <h2 className="mt-2 font-bold text-4xl text-gray-900 sm:text-5xl">
+              With few easy steps
+            </h2>
+            <p className="mt-4 text-lg text-gray-600">
+              now you can learn scal and grow your business fater.
+            </p>
+          </div>
+
+          <Image
+            src="/assets/erro_down.svg"
+            alt="arrow"
+            width={105}
+            height={105}
+            className="max-xl:hidden absolute right-[0] top-[-100px] z-0"
+          />
+        </div>
+
+        <div className="mx-auto max-w-screen-2xl px-6 lg:px-8">
           <div className="mt-16 flow-root sm:mt-24">
             <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
               <Image
@@ -156,6 +200,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+      {/* here it the footer */}
+      <Footer />
     </>
   );
 }
