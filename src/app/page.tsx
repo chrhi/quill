@@ -13,70 +13,34 @@ import Link from "next/link";
 import { FC } from "react";
 
 export default function Home() {
+  //throw new Error("this is me trying to create the error page");
   return (
     <>
-      <MaxWidthWrapper className=" relative flex flex-col items-center justify-center text-center">
-        <section className=" relative  mt-12">
-          <div className="flex  items-center gap-10 ">
-            <div className="flex  w-full md:w-[50%]  p-4 md:pt-20 md:pr-20 flex-col  gap-y-4 justify-end items-start">
-              <h1 className=" text-6xl md:text-7xl font-bold text-center md:text-start">
-                Chat with your documents in seconds with
-                <span className="text-primary"> Quill</span>
-              </h1>
+      <MaxWidthWrapper className="mb-12 mt-28 sm:mt-40 flex flex-col items-center justify-center text-center">
+        <div className="mx-auto mb-4 flex max-w-fit items-center justify-center space-x-2 overflow-hidden rounded-full border border-gray-200 bg-white px-7 py-2 shadow-md backdrop-blur transition-all hover:border-gray-300 hover:bg-white/50">
+          <p className="text-sm font-semibold text-gray-700">
+            Quill is now public!
+          </p>
+        </div>
+        <h1 className="max-w-4xl text-5xl font-bold md:text-6xl lg:text-7xl">
+          Chat with your <span className="text-blue-600">documents</span> in
+          seconds.
+        </h1>
+        <p className="mt-5 max-w-prose text-zinc-700 sm:text-lg">
+          Quill allows you to have conversations with any PDF document. Simply
+          upload your file and start asking questions right away.
+        </p>
 
-              <p className="mt-6 text-xl md:text-2xl text-gray-600 text-center md:text-start ">
-                Powerful, Beatiful software as a service that allows you to chat
-                with your documents
-              </p>
-              <Link
-                href="/signup"
-                className={cn(
-                  buttonVariants({ size: "lg" }),
-                  "rounded-full p-4 max-w-xs text-2xl mx-auto md:mx-0 flex items-center font-semibold h-14 my-5 "
-                )}
-              >
-                {" "}
-                start for free <ArrowRight className="ml-2 h-6 w-6" />
-              </Link>
-
-              {/* <Searchbar /> */}
-            </div>
-
-            <div className="relative  w-[0%] hidden md:block md:w-[50%]  h-full    sm:mx-auto">
-              <Image
-                src="/assets/start.svg"
-                alt="arrow"
-                width={105}
-                height={105}
-                className="max-xl:hidden absolute right-[15%] top-[100px] "
-              />
-              <Image
-                src={"/assets/hero-1.png"}
-                alt={"woman with laptob"}
-                width={1200}
-                height={1188}
-                quality={100}
-                priority
-                className="object-contain"
-              />
-
-              <Image
-                src="/assets/hand-drawn-arrow.svg"
-                alt="arrow"
-                width={175}
-                height={175}
-                className="max-xl:hidden absolute -left-[15%] bottom-[100px] z-0"
-              />
-              <Image
-                src="/assets/start.svg"
-                alt="arrow"
-                width={105}
-                height={105}
-                className="max-xl:hidden absolute left-[10%] bottom-[80px] "
-              />
-            </div>
-          </div>
-        </section>
+        <Link
+          className={buttonVariants({
+            size: "lg",
+            className: "mt-5",
+          })}
+          href="/dashboard"
+          target="_blank"
+        >
+          Get started <ArrowRight className="ml-2 h-5 w-5" />
+        </Link>
       </MaxWidthWrapper>
 
       {/* value proposition section */}
@@ -154,13 +118,13 @@ export default function Home() {
           {services.map((item, index) => (
             <li
               key={item.title}
-              className="md:flex-1 bg-blue-500 h-[200px]  rounded-lg shadow p-4 "
+              className="md:flex-1 bg-white h-[200px]  rounded-lg shadow p-4 "
             >
               <div className="flex flex-col space-y-2  border-zinc-300 py-2 pl-4  md:pb-0 md:pl-0 md:pt-4">
-                <span className="text-xl text-white font-semibold">
+                <span className="text-xl text-black font-semibold">
                   {item.title}
                 </span>
-                <span className="mt-2 text-gray-100">{item.description}</span>
+                <span className="mt-2 text-gray-900">{item.description}</span>
               </div>
             </li>
           ))}
