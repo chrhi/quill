@@ -19,10 +19,10 @@ const NotFound: FC = ({}) => {
           size: "lg",
           className: "mt-5",
         })}
-        href="/"
+        href="/dashboard"
       >
         <ArrowLeft className="mr-2 h-5 w-5" />
-        Go to Home
+        Go to Home and see
       </Link>
     </MaxWidthWrapper>
   );
