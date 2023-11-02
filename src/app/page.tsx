@@ -2,7 +2,7 @@ import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 
 import { ArrowRight } from "lucide-react";
 
-import Hero from "@/components/layout/sections/Hero";
+
 import { services } from "@/config/landing-page";
 import Footer from "@/components/layout/footer";
 import { Button, buttonVariants } from "@/components/ui/button";
